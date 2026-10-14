@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Montar o carro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="carro.css">
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <div>
+      <a class="crumb" href="index.html">&larr; Voltar à explicação</a>
+      <p class="eyebrow">Apresentação prática de front-end</p>
+      <h1>Garagem Front-End</h1>
+      <p class="lede">Monte um carro arrastando peças. Cada peça mostra o que ela é num site: a parte que a pessoa vê e toca (front-end) e a parte que roda nos bastidores (back-end).</p>
+    </div>
+    <div class="legend" aria-label="Legenda das cores">
+      <span class="key f"><i></i>Front-end: o que se vê e se toca</span>
+      <span class="key b"><i></i>Back-end: o que roda por trás</span>
+    </div>
+  </header>
+
+  <main class="grid">
+    <aside class="tray-card" id="tray" aria-label="Catálogo de peças">
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" class="tab" id="tab-front" aria-selected="true"><b>Front-end</b><small>o que se vê</small></button>
+        <button type="button" role="tab" class="tab" id="tab-back" aria-selected="false"><b>Back-end</b><small>nos bastidores</small></button>
+      </div>
+      <div class="tray-body" id="tray-front"></div>
+      <div class="tray-body" id="tray-back" hidden></div>
+      <p class="tray-hint">Arraste uma peça até o carro. Também vale tocar na peça e depois no encaixe.</p>
+    </aside>
+
+    <section class="stage-card" aria-label="Palco do carro">
+      <div class="stage-bar">
+        <span>Cenário</span>
+        <div class="seg" role="group" aria-label="Cenário">
+          <button type="button" class="scene-btn" data-scene="dia" aria-pressed="true">Dia</button>
+          <button type="button" class="scene-btn" data-scene="noite" aria-pressed="false">Noite</button>
+          <button type="button" class="scene-btn" data-scene="estudio" aria-pressed="false">Estúdio</button>
+        </div>
+      </div>
+      <div class="stage" id="stage" data-scene="dia">
+        <svg id="svg" viewBox="0 0 900 420" role="img" aria-label="Hatch esportivo visto de lado, com encaixes para as peças" style="--car:#c8433a;--car-light:#df7f77;--car-dark:#8c2a24;--decal:#ffffff">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--sky-a)"/><stop offset="1" style="stop-color:var(--sky-b)"/></linearGradient>
+            <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--car-light)"/><stop offset=".4" style="stop-color:var(--car)"/><stop offset="1" style="stop-color:var(--car-dark)"/></linearGradient>
+            <linearGradient id="glassGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c3e2f3"/><stop offset="1" stop-color="#7ea8c3"/></linearGradient>
+            <linearGradient id="beamGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff6c8" stop-opacity=".85"/><stop offset="1" stop-color="#fff6c8" stop-opacity="0"/></linearGradient>
+            <clipPath id="bodyClip"><path d="M84 336 L76 312 L78 270 Q78 248 96 241 L104 236 C168 216 242 176 306 158 Q330 150 362 150 L506 150 Q522 150 534 161 L600 222 Q610 231 628 233 L782 251 Q828 258 836 290 L834 322 L822 336 Z"/></clipPath>
+            <clipPath id="winClip"><path d="M314 226 C324 200 340 180 362 168 L498 166 Q510 166 518 174 L578 224 Z"/></clipPath>
+          </defs>
+
+          <rect width="900" height="420" fill="url(#sky)"/>
+          <g id="sc-dia" aria-hidden="true">
+            <ellipse cx="150" cy="78" rx="62" ry="15" fill="#fff" opacity=".8"/><ellipse cx="190" cy="68" rx="40" ry="14" fill="#fff" opacity=".8"/>
+            <ellipse cx="690" cy="104" rx="70" ry="14" fill="#fff" opacity=".7"/><ellipse cx="730" cy="94" rx="38" ry="12" fill="#fff" opacity=".7"/>
+          </g>
+          <g id="sc-noite" aria-hidden="true" fill="#fff">
+            <circle cx="90" cy="60" r="1.5" opacity=".8"/><circle cx="210" cy="104" r="1.2" opacity=".6"/><circle cx="320" cy="48" r="1.6" opacity=".9"/>
+            <circle cx="430" cy="92" r="1.2" opacity=".7"/><circle cx="520" cy="40" r="1.5" opacity=".8"/><circle cx="610" cy="110" r="1.2" opacity=".6"/>
+            <circle cx="700" cy="58" r="1.6" opacity=".9"/><circle cx="60" cy="130" r="1.2" opacity=".6"/><circle cx="380" cy="130" r="1.3" opacity=".6"/>
+            <circle cx="840" cy="130" r="1.4" opacity=".7"/><circle cx="785" cy="72" r="22" fill="#f3efd8"/><circle cx="794" cy="66" r="19" style="fill:var(--sky-a)"/>
+          </g>
+          <g id="sc-estudio" aria-hidden="true"><ellipse cx="450" cy="372" rx="430" ry="34" fill="#fff" opacity=".55"/></g>
+
+          <rect y="358" width="900" height="62" style="fill:var(--ground)"/>
+          <line x1="0" y1="358" x2="900" y2="358" style="stroke:var(--ground-line)" stroke-width="2"/>
+          <ellipse cx="450" cy="362" rx="410" ry="11" fill="#000" opacity=".26"/>
+
+          <g id="car-body">
+            <path class="body-path" d="M84 336 L76 312 L78 270 Q78 248 96 241 L104 236 C168 216 242 176 306 158 Q330 150 362 150 L506 150 Q522 150 534 161 L600 222 Q610 231 628 233 L782 251 Q828 258 836 290 L834 322 L822 336 Z" fill="url(#bodyGrad)" stroke="rgba(0,0,0,.25)" stroke-width="1.5" stroke-linejoin="round"/>
+            <g clip-path="url(#bodyClip)">
+              <circle cx="235" cy="310" r="56" fill="#0d1115"/><circle cx="640" cy="310" r="56" fill="#0d1115"/>
+              <circle cx="235" cy="310" r="59" fill="none" stroke="rgba(0,0,0,.5)" stroke-width="5"/><circle cx="640" cy="310" r="59" fill="none" stroke="rgba(0,0,0,.5)" stroke-width="5"/>
+              <path d="M96 246 L590 236 L790 256" fill="none" stroke="rgba(0,0,0,.2)" stroke-width="2"/>
+              <path d="M298 322 L584 322 L584 340 L298 340 Z" fill="#14181c"/>
+              <path d="M84 322 L172 318 L172 340 L84 340 Z" fill="#14181c"/>
+              <path d="M700 328 L836 322 L836 340 L700 340 Z" fill="#14181c"/>
+            </g>
+            <path d="M690 245 L744 251 M690 252 L744 258" stroke="rgba(0,0,0,.45)" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M806 286 L835 292 L833 314 L808 312 Z" fill="#0f1317"/>
+            <path d="M809 294 L832 298 M809 300 L832 304 M809 306 L831 310" stroke="#2b333a" stroke-width="1.5" fill="none"/>
+            <path d="M798 318 L830 320 L826 329 L798 327 Z" fill="#0f1317"/>
+            <path d="M798 334 L864 330 Q868 336 858 340 L790 341 Z" fill="#14181c"/>
+            <rect x="70" y="326" width="12" height="7" rx="3" fill="#aeb7bf"/>
+            <path d="M330 151 L348 150 L343 142 Q336 141 330 151 Z" fill="#14181c"/>
+            <g class="shine" fill="none" stroke="#fff" stroke-linecap="round">
+              <path d="M112 240 C172 220 244 182 308 162 Q332 155 362 155 L504 155" stroke-opacity=".4" stroke-width="3"/>
+              <path d="M640 238 L776 254" stroke-opacity=".32" stroke-width="3"/>
+              <path d="M92 262 L96 300" stroke-opacity=".2" stroke-width="3"/>
+            </g>
+            <text id="decal-text" x="452" y="298" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" letter-spacing="1.4" style="fill:var(--decal)" opacity=".92">FRONT-END 01</text>
+          </g>
+
+          <g id="glass" clip-path="url(#winClip)">
+            <path d="M314 226 C324 200 340 180 362 168 L498 166 Q510 166 518 174 L578 224 Z" fill="url(#glassGrad)"/>
+            <rect x="392" y="192" width="32" height="40" rx="10" fill="#2b333b"/><rect x="397" y="168" width="22" height="22" rx="8" fill="#2b333b"/>
+            <path d="M514 226 L514 215 Q538 207 562 211 L578 226 Z" fill="#222a31"/>
+          </g>
+
+          <g id="L-painel" clip-path="url(#winClip)"></g>
+          <g id="L-porta"></g>
+          <g id="L-motor"></g>
+          <g id="L-tanque"></g>
+          <g id="L-cables"></g>
+          <g id="L-aerofolio"></g>
+          <g id="L-luzes"></g>
+          <g id="L-rodaT"></g>
+          <g id="L-rodaF"></g>
+          <g id="L-zones"></g>
+          <g id="L-pins"></g>
+        </svg>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite">Arraste uma peça do catálogo até o encaixe destacado no carro. As bolinhas com + mostram onde ainda falta peça.</p>
+    </section>
+
+    <aside class="panel" aria-label="Painel de detalhes">
+      <section class="sec" aria-labelledby="h-sel">
+        <h2 id="h-sel">Peça selecionada</h2>
+        <div class="sel-head"><h3 id="sel-title">Carroceria e pintura</h3><span id="sel-layer" class="badge front">Front-end</span></div>
+        <dl class="pair">
+          <div><dt>No carro</dt><dd id="sel-carro"></dd></div>
+          <div><dt>No site</dt><dd id="sel-site"></dd></div>
+        </dl>
+        <p class="tags" id="sel-tags"></p>
+        <p class="note" id="sel-note"></p>
+        <div class="variants" id="sel-variants"></div>
+        <div class="btns"><button type="button" class="btn quiet" id="sel-copy" hidden>Copiar para a outra roda</button><button type="button" class="btn quiet" id="sel-remove" hidden>Remover peça</button></div>
+      </section>
+
+      <section class="sec" aria-labelledby="h-paint">
+        <h2 id="h-paint">Pintura e texto</h2>
+        <div class="swatches" id="swatches"></div>
+        <div class="row"><label for="color-input">Outra cor</label><div><input type="color" id="color-input" value="#c8433a"></div></div>
+        <div class="row"><label for="finish">Acabamento</label><select id="finish"><option value="brilhante">Brilhante</option><option value="fosco">Fosco</option></select></div>
+        <div class="row"><label for="decal">Adesivo na porta</label><input type="text" id="decal" maxlength="16" value="FRONT-END 01" autocomplete="off" spellcheck="false"></div>
+      </section>
+
+      <section class="sec" aria-labelledby="h-prog">
+        <h2 id="h-prog">Montagem</h2>
+        <div class="meter"><div class="meter-top"><span>Front-end</span><b id="prog-front">0 de 6</b></div><div class="bar fe"><i id="bar-front"></i></div></div>
+        <div class="meter"><div class="meter-top"><span>Back-end</span><b id="prog-back">0 de 2</b></div><div class="bar be"><i id="bar-back"></i></div></div>
+        <div class="meter"><div class="meter-top"><span>Cabos (API) ligados</span><b id="prog-api">0 de 2</b></div><div class="bar ap"><i id="bar-api"></i></div></div>
+        <p class="done" id="done" hidden>Carro completo: a interface, o servidor e o banco de dados conversam por API.</p>
+        <div class="btns">
+          <button type="button" class="btn primary" id="btn-save">Salvar projeto</button>
+          <button type="button" class="btn" id="btn-load">Restaurar</button>
+          <button type="button" class="btn" id="btn-reset">Recomeçar</button>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <section class="code" aria-labelledby="h-code">
+    <h2 id="h-code">Por dentro do código</h2>
+    <p>Versão resumida do que esta página faz. Três ideias bastam: ouvir o ponteiro, guardar o estado e desenhar a tela a partir dele.</p>
+    <div class="code-grid">
+      <div class="snip"><h3>1. Arrastar</h3><pre><code>chip.addEventListener('pointerdown', comecar);
+
+function mover(e) {
+  fantasma.style.transform =
+    `translate(${e.clientX}px, ${e.clientY}px)`;
+  encaixe = encaixeSob(e.clientX, e.clientY);
+}</code></pre></div>
+      <div class="snip"><h3>2. Soltar</h3><pre><code>function soltar() {
+  if (encaixe) instalar(peca, encaixe);
+  else avisarEncaixeErrado();
+}
+
+<span class="c">// o mesmo código serve para mouse e dedo</span></code></pre></div>
+      <div class="snip"><h3>3. Estado vira tela</h3><pre><code>estado.pecas.rodas = 'roda-esportiva';
+desenharCarro(estado);
+localStorage.setItem(
+  'garagem', JSON.stringify(estado));</code></pre></div>
+    </div>
+  </section>
+</div>
+
+<script src="parts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

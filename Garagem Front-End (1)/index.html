@@ -1,0 +1,233 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Garagem Front-End</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="intro.css">
+<div class="wrap">
+
+  <header class="nav">
+    <span class="brand">Garagem Front-End</span>
+    <a class="btn" href="carro.html">Ir direto para o carro</a>
+  </header>
+
+  <section class="hero" aria-labelledby="h-hero">
+    <div class="hero-text">
+      <p class="eyebrow">Apresentação prática de front-end</p>
+      <h1 id="h-hero">Front-end é o que você vê, toca e usa num site.</h1>
+      <p class="lede">Botões, menus, cores, formulários e animações. Tudo isso roda no navegador da pessoa e responde na hora ao que ela faz. Esta página mostra como, com exemplos que você pode mexer. Depois, o carro junta tudo num só lugar.</p>
+      <div class="hero-actions">
+        <a class="btn primary big" href="#camadas">Começar pelos exemplos</a>
+        <a class="btn big" href="carro.html">Pular para o carro</a>
+      </div>
+    </div>
+    <figure class="diagram">
+      <svg viewBox="0 0 560 250" role="img" aria-label="O navegador, que é o front-end, faz pedidos ao servidor, que é o back-end. O servidor consulta o banco de dados e devolve a resposta.">
+        <rect class="dg-fe" x="8" y="30" width="192" height="156" rx="14"/>
+        <path class="dg-fe-bar" d="M8 44 Q8 30 22 30 L186 30 Q200 30 200 44 L200 58 L8 58 Z"/>
+        <circle class="dg-dot" cx="24" cy="44" r="4"/><circle class="dg-dot" cx="38" cy="44" r="4"/><circle class="dg-dot" cx="52" cy="44" r="4"/>
+        <rect class="dg-ui" x="24" y="74" width="100" height="10" rx="5"/>
+        <rect class="dg-ui" x="24" y="92" width="150" height="8" rx="4"/>
+        <rect class="dg-ui" x="24" y="106" width="130" height="8" rx="4"/>
+        <rect class="dg-btn" x="24" y="124" width="74" height="22" rx="8"/>
+        <text class="dg-lab-fe" x="104" y="170" text-anchor="middle">Front-end</text>
+        <text class="dg-sub" x="104" y="205" text-anchor="middle">no navegador</text>
+
+        <path class="dg-line" d="M204 96 L358 96"/><path class="dg-head" d="M358 96 L348 91 L348 101 Z"/>
+        <path class="dg-line" d="M358 128 L204 128"/><path class="dg-head" d="M204 128 L214 123 L214 133 Z"/>
+        <rect class="dg-chip" x="238" y="76" width="82" height="22" rx="11"/>
+        <text class="dg-chip-t" x="279" y="91" text-anchor="middle">pedido</text>
+        <rect class="dg-chip" x="226" y="130" width="106" height="22" rx="11"/>
+        <text class="dg-chip-t" x="279" y="145" text-anchor="middle">resposta JSON</text>
+
+        <rect class="dg-be" x="362" y="30" width="192" height="92" rx="14"/>
+        <text class="dg-lab-be" x="458" y="72" text-anchor="middle">Back-end</text>
+        <text class="dg-sub" x="458" y="96" text-anchor="middle">no servidor</text>
+        <path class="dg-line be" d="M458 122 L458 146"/><path class="dg-head be" d="M458 152 L453 142 L463 142 Z"/>
+        <rect class="dg-be" x="362" y="154" width="192" height="50" rx="14"/>
+        <text class="dg-lab-be small" x="458" y="184" text-anchor="middle">Banco de dados</text>
+      </svg>
+      <figcaption>O front-end faz o pedido e mostra a resposta. O back-end decide, consulta o banco de dados e devolve os dados.</figcaption>
+    </figure>
+  </section>
+
+  <section class="block" id="camadas" aria-labelledby="h-cam">
+    <div class="sec-head">
+      <p class="eyebrow">HTML, CSS e JavaScript</p>
+      <h2 id="h-cam">Três linguagens fazem o site funcionar</h2>
+      <p>Desligue cada camada do cartão abaixo e veja o que sobra.</p>
+    </div>
+    <div class="lab-grid">
+      <div class="lab" id="lab" data-css="on" data-js="on">
+        <div class="lab-controls" role="group" aria-label="Camadas ligadas">
+          <label class="sw"><input type="checkbox" checked disabled> HTML</label>
+          <label class="sw"><input type="checkbox" id="t-css" checked> CSS</label>
+          <label class="sw"><input type="checkbox" id="t-js" checked> JavaScript</label>
+        </div>
+        <div class="lab-stage">
+          <article class="prod">
+            <h3>Filtro de óleo</h3>
+            <p class="desc">Troque a cada 10.000 km para proteger o motor.</p>
+            <p class="price">R$ 39,90</p>
+            <button type="button" class="buy" id="buy">Adicionar ao carrinho</button>
+            <p class="cart" id="cart-msg" aria-live="polite">Carrinho: 0 itens</p>
+          </article>
+        </div>
+        <p class="lab-note" id="lab-note"></p>
+      </div>
+      <ul class="layers">
+        <li><div class="layer-head"><b>HTML</b><span>estrutura</span></div><p>Diz o que existe na página: título, texto, preço e botão. No carro, é a carroceria.</p></li>
+        <li><div class="layer-head"><b>CSS</b><span>aparência</span></div><p>Cuida de cores, espaços, fontes e do layout. No carro, é a pintura.</p></li>
+        <li><div class="layer-head"><b>JavaScript</b><span>comportamento</span></div><p>Reage a cliques e digitação e muda a tela. No carro, é a parte elétrica.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="vivo" aria-labelledby="h-vivo">
+    <div class="sec-head">
+      <p class="eyebrow">Exemplos ao vivo</p>
+      <h2 id="h-vivo">O front-end reage ao que a pessoa faz</h2>
+      <p>Cada cartão mostra uma ideia diferente. Mexa e leia a linha de código embaixo.</p>
+    </div>
+    <div class="demos">
+
+      <article class="card demo">
+        <h3>Estado</h3>
+        <p class="tagline">uma variável guarda o que está acontecendo</p>
+        <div><button type="button" class="like" id="like" aria-pressed="false"><span id="like-label">Curtir</span><b id="like-n">12</b></button></div>
+        <pre class="mini"><code id="like-state"></code></pre>
+      </article>
+
+      <article class="card demo">
+        <h3>Formulário</h3>
+        <p class="tagline">o evento input roda a cada tecla</p>
+        <div class="field" id="mail-field" data-state="idle">
+          <label for="mail">E-mail</label>
+          <input id="mail" type="text" inputmode="email" autocomplete="off" spellcheck="false" placeholder="nome@exemplo.com" aria-describedby="mail-msg">
+          <p class="field-msg" id="mail-msg" aria-live="polite">Digite um e-mail para ver a validação.</p>
+        </div>
+        <pre class="mini"><code id="mail-count">evento input: 0 vezes</code></pre>
+      </article>
+
+      <article class="card demo">
+        <h3>Layout responsivo</h3>
+        <p class="tagline">as colunas se ajustam à largura</p>
+        <div class="field">
+          <label for="rng">Largura da área</label>
+          <input id="rng" type="range" min="25" max="100" value="100">
+        </div>
+        <div class="resp-outer">
+          <div class="resp-box" id="resp-box"><div class="resp-grid" id="resp-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        </div>
+        <pre class="mini"><code id="rng-label"></code></pre>
+      </article>
+
+      <article class="card demo">
+        <h3>Variáveis do CSS</h3>
+        <p class="tagline">uma cor muda a página inteira</p>
+        <div class="pv" id="pv">
+          <span class="pv-badge">Novo</span>
+          <button type="button" class="pv-btn" tabindex="-1">Botão de exemplo</button>
+          <div class="pv-bar"><i></i></div>
+        </div>
+        <div class="pv-controls">
+          <label class="inline">Cor <input type="color" id="pv-color" value="#0a73a6"></label>
+          <label class="inline">Arredondamento <input type="range" id="pv-radius" min="0" max="24" value="12"></label>
+        </div>
+        <pre class="mini"><code id="pv-code"></code></pre>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="api" aria-labelledby="h-api">
+    <div class="sec-head">
+      <p class="eyebrow">Conversa com o back-end</p>
+      <h2 id="h-api">O front-end pede, o servidor responde</h2>
+      <p>Aqui o servidor é simulado com um atraso de 1 segundo. Num projeto real, a linha do pedido seria um <code>fetch('/api/produtos')</code>. Repare nos estados da tela: vazio, carregando, sucesso e erro.</p>
+    </div>
+    <div class="api">
+      <div class="api-controls">
+        <button type="button" class="btn primary" id="api-go">Buscar produtos</button>
+        <label class="sw"><input type="checkbox" id="api-err"> Simular erro do servidor</label>
+      </div>
+      <div class="api-grid">
+        <div class="card api-pane"><h3>O que a pessoa vê</h3><div class="api-ui" id="api-ui" aria-live="polite"><p class="api-empty">Nada carregado ainda. Clique em Buscar produtos.</p></div></div>
+        <div class="card api-pane"><h3>O que trafega pela API</h3><pre class="mini"><code id="api-log">Nenhum pedido feito.</code></pre></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="arrastar" aria-labelledby="h-dd">
+    <div class="sec-head">
+      <p class="eyebrow">Arrastar e soltar</p>
+      <h2 id="h-dd">Três eventos do mouse e do dedo</h2>
+      <p>É a técnica do carro, em tamanho pequeno. Arraste um bloco até a página, ou toque nele para adicionar. Os eventos acendem na lista conforme acontecem.</p>
+    </div>
+    <div class="dd">
+      <div class="dd-tray" aria-label="Blocos disponíveis">
+        <button type="button" class="tile" data-kind="titulo">Título</button>
+        <button type="button" class="tile" data-kind="imagem">Imagem</button>
+        <button type="button" class="tile" data-kind="botao">Botão</button>
+      </div>
+      <div class="dd-page" id="dd-page" aria-label="Página em construção">
+        <p class="dd-empty" id="dd-empty">Solte os blocos aqui</p>
+      </div>
+      <div class="dd-side">
+        <ol class="dd-events" id="dd-events">
+          <li data-ev="pointerdown"><code>pointerdown</code> apertou o bloco</li>
+          <li data-ev="pointermove"><code>pointermove</code> está arrastando</li>
+          <li data-ev="pointerup"><code>pointerup</code> soltou</li>
+        </ol>
+        <button type="button" class="btn" id="dd-reset">Limpar a página</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="carro" aria-labelledby="h-car">
+    <div class="sec-head">
+      <p class="eyebrow">Do site para o carro</p>
+      <h2 id="h-car">Cada peça do carro é uma ideia deste site</h2>
+      <p>Na Garagem Front-End, você monta o carro e a explicação de cada peça aparece ao lado.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="map">
+        <thead><tr><th scope="col">No carro</th><th scope="col">No site</th><th scope="col">Camada</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Carroceria e pintura</th><td>HTML e CSS: a estrutura e a aparência</td><td><span class="badge front">Front-end</span></td></tr>
+          <tr><th scope="row">Painel e volante</th><td>Formulários, campos e botões que leem o que a pessoa faz</td><td><span class="badge front">Front-end</span></td></tr>
+          <tr><th scope="row">Faróis e lanternas</th><td>Feedback visual: carregando, sucesso e erro</td><td><span class="badge front">Front-end</span></td></tr>
+          <tr><th scope="row">Rodas</th><td>Componentes reutilizáveis</td><td><span class="badge front">Front-end</span></td></tr>
+          <tr><th scope="row">Porta</th><td>Navegação: menus e links</td><td><span class="badge front">Front-end</span></td></tr>
+          <tr><th scope="row">Aerofólio</th><td>Acabamento: sombras, transições e responsividade</td><td><span class="badge front">Front-end</span></td></tr>
+          <tr><th scope="row">Cabos</th><td>API: pedidos e respostas entre as duas partes</td><td><span class="badge bridge">Conexão</span></td></tr>
+          <tr><th scope="row">Motor</th><td>Lógica do servidor: regras, cálculos e login</td><td><span class="badge back">Back-end</span></td></tr>
+          <tr><th scope="row">Tanque</th><td>Banco de dados</td><td><span class="badge back">Back-end</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cta">
+      <div>
+        <h3>Agora monte o carro</h3>
+        <p>Arraste as peças, troque a cor e veja o que cada uma representa num site.</p>
+      </div>
+      <a class="btn primary big" href="carro.html">Abrir a Garagem Front-End</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>Tudo aqui é HTML, CSS e JavaScript puros, sem React e sem bibliotecas.</p>
+    <pre><code>index.html   esta página explicativa
+intro.css    estilos desta página
+intro.js     exemplos interativos
+carro.html   a Garagem Front-End
+carro.css    estilos do carro
+parts.js     catálogo de peças e desenhos
+app.js       arrastar e soltar, estado e painel
+base.css     cores, fontes e botões compartilhados</code></pre>
+  </footer>
+
+</div>
+<script src="intro.js"></script>
+
+</body></html>
