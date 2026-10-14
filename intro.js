@@ -31,7 +31,7 @@
 
   /* 2. Estado: a tela é desenhada a partir de um objeto */
   (function () {
-    var st = { curtido: false, curtidas: 12 };
+    var st = { curtido: false, curtidas: 99 };
     var btn = $('like'), label = $('like-label'), num = $('like-n'), out = $('like-state');
     function draw() {
       btn.setAttribute('aria-pressed', String(st.curtido));
