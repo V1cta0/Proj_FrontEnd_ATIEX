@@ -1,6 +1,3 @@
-/* Catálogo de encaixes e peças da Garagem Front-End.
-   Todo desenho usa coordenadas absolutas do SVG do palco (viewBox 0 0 900 420).
-   Chão em y=358. Rodas: traseira em x=235, dianteira em x=640. */
 (function () {
   'use strict';
 
