@@ -123,7 +123,7 @@ h3#sel-title { margin: 0; font-family: var(--f-display); font-stretch: 118%; fon
 .pair { margin: 0; display: grid; gap: 10px; }
 .pair dt { font: 500 11.5px/1.2 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 2px; }
 .pair dd { margin: 0; max-width: 60ch; }
-.tags { margin: 0; font: 400 12.5px/1.4 var(--f-mono); color: var(--ink-2); }
+.tags { display: none; margin: 0; font: 400 12.5px/1.4 var(--f-mono); color: var(--ink-2); }
 .note { margin: 0; padding: 9px 11px; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); font-size: 13.5px; }
 .variants { display: flex; flex-wrap: wrap; gap: 6px; }
 .vbtn { padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface-2); cursor: pointer; font-size: 13px; }

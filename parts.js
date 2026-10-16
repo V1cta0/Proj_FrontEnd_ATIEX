@@ -28,65 +28,65 @@
     rodas: {
       title: 'Rodas', layer: 'front',
       carro: 'Tocam o chão e aparecem dos dois lados do carro.',
-      site: WHEEL_SITE, tags: 'componentes · React · CSS'
+      site: WHEEL_SITE, tags: ''
     },
     rodaF: {
       title: 'Roda dianteira', layer: 'front',
       carro: 'É a roda que vira quando o motorista gira o volante. Pode ter um modelo só dela.',
-      site: WHEEL_SITE, tags: 'componentes · React · CSS'
+      site: WHEEL_SITE, tags: ''
     },
     rodaT: {
       title: 'Roda traseira', layer: 'front',
       carro: 'Sustenta a traseira e acompanha o desenho do carro. Pode ter um modelo só dela.',
-      site: WHEEL_SITE, tags: 'componentes · React · CSS'
+      site: WHEEL_SITE, tags: ''
     },
     porta: {
       title: 'Porta', layer: 'front',
       carro: 'É por onde a pessoa entra e sai do carro.',
       site: 'Navegação e interação: menus, links e botões que levam o usuário de uma tela para outra.',
-      tags: 'HTML · links · menus'
+      tags: ''
     },
     luzes: {
       title: 'Faróis e lanternas', layer: 'front',
       carro: 'Mostram o que o carro está fazendo e iluminam o caminho. Teste o cenário Noite.',
       site: 'Feedback visual: carregando, sucesso, erro e avisos. A interface responde ao que a pessoa fez.',
-      tags: 'estados · animações · mensagens'
+      tags: ''
     },
     aerofolio: {
       title: 'Aerofólio', layer: 'front',
       carro: 'Não é obrigatório, mas dá identidade esportiva ao carro.',
       site: 'Acabamento visual: sombras, transições, responsividade e microinterações feitas em CSS.',
-      tags: 'CSS · animações · responsivo'
+      tags: ''
     },
     painel: {
       title: 'Painel e volante', layer: 'front',
       carro: 'É onde o motorista dá os comandos.',
       site: 'Controles da tela: formulários, campos, botões e o próprio arrastar e soltar. Tudo que lê o que a pessoa faz.',
-      tags: 'formulários · eventos · JavaScript'
+      tags: ''
     },
     motor: {
       title: 'Motor', layer: 'back',
       carro: 'Fica escondido sob o capô e faz o carro andar.',
       site: 'Lógica do servidor: regras do negócio, cálculos, login e permissões. A pessoa não vê, mas nada funciona sem ele.',
-      tags: 'Java · Python · Node.js'
+      tags: ''
     },
     tanque: {
       title: 'Tanque (banco de dados)', layer: 'back',
       carro: 'Guarda o combustível até alguém precisar.',
       site: 'Banco de dados: guarda usuários, pedidos e projetos para que a informação continue lá depois de fechar o site.',
-      tags: 'SQL · NoSQL · armazenamento'
+      tags: ''
     },
     carroceria: {
       title: 'Carroceria e pintura', layer: 'front',
       carro: 'É a estrutura e a aparência do carro.',
       site: 'HTML é a estrutura, CSS é a pintura e JavaScript é a parte elétrica que reage aos comandos. Mude a cor ao lado e veja o CSS trabalhando.',
-      tags: 'HTML · CSS · JavaScript'
+      tags: ''
     },
     api: {
       title: 'Cabos (API)', layer: 'bridge',
       carro: 'Ligam o painel ao motor e o motor ao tanque.',
       site: 'A API é a ponte: o front-end faz um pedido (requisição) e o back-end devolve a resposta, em geral como JSON.',
-      tags: 'HTTP · REST · JSON'
+      tags: ''
     }
   };
 
